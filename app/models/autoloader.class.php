@@ -1,0 +1,1 @@
+<?php	class Autoloader{		public static function register($class_name){			require_once strtolower($class_name).'.class.php';		}		public static function autoload(){			spl_autoload_register(array(__CLASS__, "register"));		}	}

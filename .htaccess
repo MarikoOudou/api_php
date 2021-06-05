@@ -1,0 +1,9 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^api$ api.php?controller=error [L]
+RewriteRule ^api/([\w\+\(\)\-]+)$ api.php?controller=error [L]
+RewriteRule ^api/([\w\+\(\)\-]+)/([\w\+\(\)\-]+)$ api.php?controller=$1&action=$2 [L]
